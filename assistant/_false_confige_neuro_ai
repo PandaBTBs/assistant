@@ -20,7 +20,7 @@ def llm_fuction(massige, chat_hisotry):
 
 title = 'Codeneuro 7B GGUF'
 
-examples = '*_'
+examples = 'not found'
 
 gr.ChatInterFace(
     fn = llm_fuction,
