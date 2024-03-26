@@ -1,4 +1,4 @@
-#Numi v1.0.0
+#neuro v1.0.0
 # TheBloke_Wizard-Vicuna-13B-Uncensored-SuperHOT-8K-GPTQ
 # Segoe Print
 # from Vicuna13B8KGPTQ import * 
