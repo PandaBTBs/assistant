@@ -170,134 +170,24 @@ def execute_cmd(cmd: str):
     elif cmd == 'open_steam':
         text = 'Открываю стим'
         tts.va_speak(text)
-        steamapp = 'pyt(C:/HQ/FF.PY)'
-        webbrowser.get(steamapp).open(https://...)
+        steamapp = 'C:/Program Files/Google/Chrome/Application'
+        webbrowser.get(steamapp).open('https://store.steampowered.com/?l=russian')
         text+='открыла стим'
         tts.va_speak(text)        
             
-    elif cmd == 'open_shar':
-        text = 'Открываю снимок экрана'
-        tts.va_speak(text)
-        sharex = 'pyt(C:/HQ/FF.PY)'
-        webbrowser.get(sharex).open(sharex.exe)
-        text+='открыла снимок'
-        tts.va_speak(text)       
+    # elif cmd == 'open_shar':
+    #     text = 'Открываю снимок экрана'
+    #     tts.va_speak(text)
+    #     sharex = ''
+    #     text+='открыла снимок'
+    #     tts.va_speak(text)       
 
-    elif cmd == 'open_OBS':
-        text = 'Открываю запись экрана'
-        tts.va_speak(text)
-        OBS_studio = 'pyt(C:/HQ/FF.PY)'
-        webbrowser.get(OBS_studio).open(OBS.exe)
-        text+='открыла запись'
-        tts.va_speak(text)    
+    # elif cmd == 'open_OBS':
+    #     text = 'Открываю запись экрана'
+    #     tts.va_speak(text)
+    #     OBS_studio = ''
+    #     text+='открыла запись'
+    #     tts.va_speak(text)  
+
 # start lisen programs
 stt.va_listen(va_respond)
-
-
-#alt
-
-# import os
-# import time
-# import speech_recognition as sr
-# from fuzzywuzzy import fuzz
-# import pyttsx3
-# import datetime
-
-# #settings
-# opts = {
-#     "alias": ('fox'),
-#     "tbr": ('say', 'tell', 'show', 'how much', 'say'),
-#     "cmds": {
-#         "ctime": ('current time', 'now is the time', 'what time is it'),
-#         "radio": ('turn on the music', 'play the radio', 'turn on the radio'),
-#         "stupid1": ('tell a joke', 'make me laugh', 'you know jokes')
-#     }
-# }
-
-
-# #the functions
-# def speak(what):
-#     print(what)
-#     speak_engine.say(what)
-#     speak_engine.runAndWait()
-#     speak_engine.stop()
-
-
-# def callback(recognizer, audio):
-#     voice = recognizer.recognize_google(audio, language="en-EN").lower()
-#     print("[log] Recognized: " + voice)
-
-#     try:
-
-#         if voice.startswith(opts["alias"]):
-#             # turn to fox
-#             cmd = voice
-
-#             for x in opts['alias']:
-#                 cmd = cmd.replace(x, "").strip()
-
-#             for x in opts['tbr']:
-#                 cmd = cmd.replace(x, "").strip()
-
-#             # recognize and execute the command
-#             cmd = recognize_cmd(cmd)
-#             execute_cmd(cmd['cmd'])
-
-#     except sr.UnknownValueError:
-#         print("[log] Voice not recognized!")
-#     except sr.RequestError as e:
-#         print("[log] Unknown error, check internet!")
-
-
-# def recognize_cmd(cmd):
-#     RC = {'cmd': '', 'percent': 0}
-#     for c, v in opts['cmds'].items():
-#         for x in v:
-#             vrt = fuzz.ratio(cmd, x)
-#             if vrt > RC['percent']:
-#                 RC['cmd'] = c
-#                 RC['percent'] = vrt
-
-#     return RC
-
-
-# def execute_cmd(cmd):
-#     if cmd == 'ctime':
-#         # say current time
-#         now = datetime.datetime.now()
-#         speak("Now " + str(now.hour) + ":" + str(now.minute))
-
-#     elif cmd == 'radio':
-#         # play radio
-#         os.system("D:\\Music")
-
-#     elif cmd == 'stupid1':
-#         # tell a joke
-#         speak("My developer did not teach me jokes ... Ha ha ha")
-
-#     else:
-#         print('Command not recognized, retry!')
-
-
-# #launch
-# r = sr.Recognizer()
-# m = sr.Microphone(device_index=1)
-
-# with m as source:
-# r.adjust_for_ambient_noise(source)
-
-# speak_engine = pyttsx3.init()
-
-
-# #Only if you have installed voice for speech synthesis!
-# voices = speak_engine.getProperty('voices')
-# speak_engine.setProperty('voice',voices[1].id)
-
-# #forced cmd test
-# speak("My developer did not teach me jokes ...")
-
-# #speak("Good afternoon lord")
-# #speak("Fox is listening")
-
-# #stop_listening = r.listen_in_background(m, callback)
-# #while True: time.sleep(0.1) # infinity loop
