@@ -1,3 +1,9 @@
+#Numi v1.0.0
+# TheBloke_Wizard-Vicuna-13B-Uncensored-SuperHOT-8K-GPTQ
+# Segoe Print
+# from Vicuna13B8KGPTQ import * 
+
+
 import config 
 import stt
 import tts
@@ -187,6 +193,8 @@ def execute_cmd(cmd: str):
 # start lisen programs
 stt.va_listen(va_respond)
 
+
+#alt
 
 # import os
 # import time
