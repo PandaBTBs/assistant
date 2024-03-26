@@ -14,7 +14,7 @@ import webbrowser
 import random
 
 
-print(f"{config.vh['name']}", f"{config.vh['alias']}", tts.va_speak("Нейро начала свою работу ..."), "Neuro начала свою работу")
+print(f"{config.vh['name']}", f"{config.vh['alias']}", tts.va_speak("начала свою работу ..."), "Neuro начала свою работу")
 
 print('Список команд:\n \
         list: список команд, команды, что ты умеешь;\n\
