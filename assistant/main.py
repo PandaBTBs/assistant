@@ -132,7 +132,6 @@ def execute_cmd(cmd: str):
 #joke
     elif cmd == 'joke':
         jokes = ['какая боль, какая боль, повсюду скидки, а денег - ноль', 'виу виу', 'памп памп']
-                #  'я могла бы рассказать еще больше, но моему создателю лень']
         tts.va_speak(random.choice(jokes))
 
 #browser
