@@ -1,1 +1,15 @@
+import gradio as gr
+import time
+from ctransformers import AutoModelForCausaLLM
 
+def load_llm():
+    llm = AutoModelCausaLLM.from_pretrained(
+        'codeneuro-7b-instruct.gguf',
+        model_type = 'neuro',
+        max_new_tokenz = 1096,
+        repetition_penalty = 1.13,
+        temperature = 0.1
+    )
+    return llm
+
+def llm_fuction()
