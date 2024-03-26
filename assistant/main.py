@@ -34,7 +34,6 @@ print('Список команд:\n \
 def va_respond(voice: str):
     print(voice)
     if voice.startswith(config.VA_ALIAS):
-        # обращаются к ассистенту
         cmd = recognize_cmd(filter_cmd(voice))
         if cmd['cmd'] not in config.VA_CMD_LIST:
             tts.va_speak("Что?")
