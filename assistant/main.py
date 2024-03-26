@@ -123,11 +123,9 @@ def execute_cmd(cmd: str):
 
 #poem
     elif cmd == 'poem':
-        text = 'ангел грешный, англел мой, забери меня с собой,\n'
-        text+= 'уенси меня домой - там сокрой, над широйкою рекой,\n'
-        text += 'над широкою водой, ты мне песенку пропой - успокой, что, мол горе, не беда, что надежда есть всегда \n'
-        text+= 'что от кривды нет вреда, иногда, \n'
-        text+= 'что мол скоро скорро скоро брат мы прибудем в дивный град, где нам всякий будет рад, прямо в Ад\n'
+        text = 'ангел грешный, англел мой, забери меня с собой, уенси меня домой - там сокрой, над широйкою рекой,\n\
+        над широкою водой, ты мне песенку пропой - успокой, что, мол горе, не беда, что надежда есть всегда \n\
+        что от кривды нет вреда, иногда, что мол скоро скорро скоро брат мы прибудем в дивный град, где нам всякий будет рад, прямо в Ад'
         tts.va_speak(text)
         # tts.va_speak(random.choice(poems))
 
@@ -145,6 +143,7 @@ def execute_cmd(cmd: str):
         webbrowser.get(chrome_youtube).open("https://youtube.com/watch?v=ABFqbY_rmEk")
         text += 'открыла ю+тюб'
         tts.va_speak(text)
+            
     elif cmd == 'open_browser_github':
         text = 'открываю гет хаб'
         tts.va_speak(text)
@@ -152,6 +151,7 @@ def execute_cmd(cmd: str):
         webbrowser.get(chrome_github).open("https://github.com/PandaBTBs/123/blob/main/config.py")
         text += 'открыла гет хаб'
         tts.va_speak(text)
+            
     elif cmd == 'open_browser_server':
         text = 'открываю сервер веб ю'
         tts.va_speak(text)
@@ -159,6 +159,14 @@ def execute_cmd(cmd: str):
         webbrowser.get(chrome_server).open("https://127.0.0.1:7860")
         text += 'открыла сервер веб ю'
         tts.va_speak(text)
+            
+    elif cmd == 'open_steam':
+        text = 'Открываю стим'
+        tts.va_speak(text)
+        steamapp = 'C:/Program Files/Google/Chrome/Application'
+        webbrowser.get(steamapp).open('https://store.steampowered.com/?l=russian')
+        text+='открыла стим'
+        tts.va_speak(text)  
 
 #exit
     elif cmd  == "exit":
@@ -166,14 +174,7 @@ def execute_cmd(cmd: str):
         tts.va_speak(text)
         quit()
             
-#open programs
-    elif cmd == 'open_steam':
-        text = 'Открываю стим'
-        tts.va_speak(text)
-        steamapp = 'C:/Program Files/Google/Chrome/Application'
-        webbrowser.get(steamapp).open('https://store.steampowered.com/?l=russian')
-        text+='открыла стим'
-        tts.va_speak(text)        
+#open programs      
             
     # elif cmd == 'open_shar':
     #     text = 'Открываю снимок экрана'
