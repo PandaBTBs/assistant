@@ -14,9 +14,7 @@ import webbrowser
 import random
 
 
-print(f"{config.VE_NAME}", f"{config.VA_ALIAS}", tts.va_speak("Нейро начала свою работу ..."), "Нейро начала свою работу")
-
-# print(f"{config.vh['name']}", f"{config.vh['alias']}", tts.va_speak("Нуми начала свою работу ..."), "Нуми начала свою работу")
+print(f"{config.vh['name']}", f"{config.vh['alias']}", tts.va_speak("Нейро начала свою работу ..."), "Neuro начала свою работу")
 
 print('Список команд:\n \
         list: список команд, команды, что ты умеешь;\n\
@@ -31,54 +29,33 @@ print('Список команд:\n \
         open_OBS: запись, запись экрана; \n\
         exit: выход;')
 
-def va_respond(voice: str):
+
+ def va_respond(voice: str):
     print(voice)
-    if voice.startswith(config.VA_ALIAS):
+    if voice.startswich(config.vh['alias']):
+        # обращаются к ассистенту
         cmd = recognize_cmd(filter_cmd(voice))
-        if cmd['cmd'] not in config.VA_CMD_LIST:
+        if cmd['cmd'] not in config.vh['cmd_list']:
             tts.va_speak("Что?")
         else:
             execute_cmd(cmd['cmd'])
 
 
- # def va_respond(voice: str):
- #    print(voice)
- #    if (config.vh['alias']):
- #        # обращаются к ассистенту
- #        cmd = recognize_cmd(filter_cmd(voice))
- #        if cmd['cmd'] not in config.vh['cmd_list']:
- #            tts.va_speak("Что?")
- #        else:
- #            execute_cmd(cmd['cmd'])
-
-
-
 def filter_cmd(raw_voice: str):
     cmd = raw_voice
 
-    for x in config.VA_ALIAS:
+    for x in config.vh['alias']:
         cmd = cmd.replace(x, "").strip()
 
-    for x in config.VA_TBR:
+    for x in config.vh['tbr']:
         cmd = cmd.replace(x, "").strip()
     
     return cmd
 
-# def filter_cmd(raw_voice: str):
-#     cmd = raw_voice
-
-#     for x in config.vh['alias']:
-#         cmd = cmd.replace(x, "").strip()
-
-#     for x in config.vh['tbr']:
-#         cmd = cmd.replace(x, "").strip()
-    
-#     return cmd
-
 
 def recognize_cmd(cmd: str):
     rc = {'cmd': '', 'percent': 0}
-    for c, v in config.VA_CMD_LIST.items():
+    for c, v in config.vh['cmd_list'].items():
 
         for x in v:
             vrt = fuzz.ratio(cmd, x)
@@ -87,18 +64,6 @@ def recognize_cmd(cmd: str):
                 rc['percent'] = vrt
 
     return rc
-
-# def recognize_cmd(cmd: str):
-#     rc = {'cmd': '', 'percent': 0}
-#     for c, v in config.vh['cmd_list'].items():
-
-#         for x in v:
-#             vrt = fuzz.ratio(cmd, x)
-#             if vrt > rc['percent']:
-#                 rc['cmd'] = c
-#                 rc['percent'] = vrt
-
-#     return rc
 
 
 #help
