@@ -14,7 +14,7 @@ import webbrowser
 import random
 
 
-print(f"{config.VE_NAME}", f"{config.VA_ALIAS}", tts.va_speak("Нуми начала свою работу ..."), "Нуми начала свою работу")
+print(f"{config.VE_NAME}", f"{config.VA_ALIAS}", tts.va_speak("Нейро ачала свою работу ..."), "Нейро начала свою работу")
 
 # print(f"{config.vh['name']}", f"{config.vh['alias']}", tts.va_speak("Нуми начала свою работу ..."), "Нуми начала свою работу")
 
