@@ -12,4 +12,18 @@ def load_llm():
     )
     return llm
 
-def llm_fuction()
+def llm_fuction(massige, chat_hisotry):
+    llm = load_llm()
+    response = llm(massige)
+    output_texts = response
+    return output_texts
+
+title = 'Codeneuro 7B GGUF'
+
+examples = '*_'
+
+gr.ChatInterFace(
+    fn = llm_fuction,
+    title=title,
+    examples=examles,
+).launch()
