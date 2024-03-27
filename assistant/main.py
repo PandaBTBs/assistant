@@ -138,7 +138,7 @@ def execute_cmd(cmd: str):
             
 #open programs      
             
-    # elif cmd == 'open_shar':
+    # elif cmd == 'open_sharex':
     #     text = 'Открываю снимок экрана'
     #     tts.va_speak(text)
     #     sharex = ''
